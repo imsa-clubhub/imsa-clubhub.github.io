@@ -29,8 +29,7 @@
                                         <p>version 2.5.0</p>
                                         <p><b>Visit</b> the website at clubhub.studco.org</p>
                                         <p><b>Register</b> an event at clubhub.studco.org/submit</p>
-					<p>IMSA Student Council 2016. Original framework by George Moe.</p>
-                                        <!--<img id="gm-logo" src="/media/georgemoe_logo.png" alt="Created by George Moe" />-->
+                                        <img id="gm-logo" src="/media/georgemoe_logo.png" alt="Created by George Moe" />
                                 </div>
                         </div>
                 </div>
