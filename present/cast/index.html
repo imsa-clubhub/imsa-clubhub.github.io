@@ -39,7 +39,7 @@
         <script type="text/javascript" src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
         <script type="text/javascript">
-                console.log("Club Hub SUD for Digital Displays version 2.5.0.");
+                console.log("Club Hub SUD for Digital Displays version 2.5.0.1");
 
                 // Change these to your own application IDs and namespace if you'd like.
                 var applicationID = 'D1F8A2B7';
@@ -119,7 +119,7 @@
                  */
                 function receiverMessage(namespace, message) {
                         console.log(message);
-                        if (message == "hi") {
+                        /*if (message == "hi") {
                                 $("#heartbeat").css({
                                         color: "lime"
                                 });
@@ -131,7 +131,7 @@
                                                 color: "red"
                                         })
                                 }, 1000);
-                        }
+                        }*/
                 };
                 /**
                  * receiver listener during initialization
@@ -164,22 +164,14 @@
                         //session.stop(onStopAppSuccess, onError);
                 }
 
-                setInterval(function() {
+                /*setInterval(function() {
                         console.log("Sending hearbeat...");
                         if (session != null) {
                                 session.sendMessage(namespace, "<3 " + counter, onSuccess.bind(this, "Sent heartbeat to Chromecast."), onError);
                                 counter++;
                                 if (counter > 100) counter = 0;
                         }
-                }, 10000); //Heartbeat rate: 10 seconds
-                
-                /*
-                //Refresh the page every 10 minutes to ensure connection
-                //DEPRECATED
-                setInterval(function() {
-                        console.log("Reconnection Refresh...")
-                        location.reload();
-                }, 600000);*/
+                }, 10000); //Heartbeat rate: 10 seconds*/
         </script>
 </head>
 
@@ -189,8 +181,8 @@
                         <td>
                                 <h1>Welcome to the Club Hub SUDCast Command Page</h1>
                                 <p id="status">Select a display for Casting.</p>
-                                <h1 id="heartbeat" style="font-size: 5em;">&#9829;</h1>
-                                <p id="statistics">Last Interval: None</p>
+                                <!--<h1 id="heartbeat" style="font-size: 5em;">&#9829;</h1>
+                                <p id="statistics">Last Interval: None</p>-->
                         </td>
                 </tr>
         </table>
