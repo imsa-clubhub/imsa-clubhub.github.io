@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!-- Club Hub - An Automated Event Display Framework -->
-<html manifest="cache.manifest">
+<html>
 
 <head>
         <!-- Include style files, jQuery, the ClubWall javascript code, and other important libraries -->
@@ -87,7 +87,7 @@
 			function beatHeart()
 			{
 				$("#heart").css({color:"lime"});
-				setTimeout(unbeatHeart, 9000);
+				setTimeout(unbeatHeart, 55000);
 			}
 
 			function unbeatHeart()
