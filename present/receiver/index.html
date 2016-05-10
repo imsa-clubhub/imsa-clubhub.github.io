@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!-- Club Hub - An Automated Event Display Framework -->
-<html manifest="cache.manifest">
+<html>
 
 <head>
         <!-- Include style files, jQuery, the ClubWall javascript code, and other important libraries -->
@@ -35,7 +35,7 @@
 
                         console.log("Club Hub SUD for Digital Displays version 2.5.0.");
                         
-                        cast.receiver.logger.setLevelValue(0);
+                        cast.receiver.logger.setLevelValue(cast.receiver.LoggerLevel.NONE);
                         window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
                         console.log('Starting Receiver Manager');
 
@@ -58,18 +58,18 @@
                         };
 
                         // create a CastMessageBus to handle messages for a custom namespace
-                        window.messageBus = window.castReceiverManager.getCastMessageBus('urn:x-cast:org.studco.clubhub');
+                        window.messageBus = window.castReceiverManager.getCastMessageBus('urn:x-cast:in.undef.clubhub');
 
                         // handler for the CastMessageBus message event
                         window.messageBus.onMessage = function(event) {
                                         console.log('Message [' + event.senderId + ']: ' + event.data);
 
                                         // sender message listener will be invoked
-                                        /*if (event.data.indexOf("<3") != -1) {
+                                        if (event.data.indexOf("<3") != -1) {
                                                 console.log("Received heartbeat!");
-						//beatHeart();
+						beatHeart();
                                                 window.messageBus.send(event.senderId, "hi");
-                                        }*/
+                                        }
                                 }
 
                         // initialize the CastReceiverManager with an application status message
@@ -84,7 +84,7 @@
 				$("#info").text(" Next refresh in about "+(RefreshTime/60000)+" minutes.");
 			}, 300000);
 
-			/*function beatHeart()
+			function beatHeart()
 			{
 				$("#heart").css({color:"lime"});
 				setTimeout(unbeatHeart, 9000);
@@ -93,7 +93,7 @@
 			function unbeatHeart()
 			{
 				$("#heart").css({color:"red"});
-			}*/
+			}
 				
                 };
         </script>
@@ -102,7 +102,7 @@
                 <div id="timerstat"></div>
         </div>
 
-	<p id="status"><!--<font id="heart">&#9829</font>--><font id="info"> Next refresh in about 360 minutes.</font></p>
+	<p id="status"><font id="heart">&#9829</font><font id="info"> Next refresh in about 360 minutes.</font></p>
 
         <!-- The slideshow itself. Items are appended by clubwall.js -->
         <div id="slideshow">

@@ -35,7 +35,7 @@
 
                         console.log("Club Hub SUD for Digital Displays version 2.5.0.");
                         
-                        cast.receiver.logger.setLevelValue(0);
+                        cast.receiver.logger.setLevelValue(cast.receiver.LoggerLevel.NONE);
                         window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
                         console.log('Starting Receiver Manager');
 
@@ -58,7 +58,7 @@
                         };
 
                         // create a CastMessageBus to handle messages for a custom namespace
-                        window.messageBus = window.castReceiverManager.getCastMessageBus('urn:x-cast:org.studco.clubhub');
+                        window.messageBus = window.castReceiverManager.getCastMessageBus('urn:x-cast:in.undef.clubhub');
 
                         // handler for the CastMessageBus message event
                         window.messageBus.onMessage = function(event) {
@@ -102,7 +102,7 @@
                 <div id="timerstat"></div>
         </div>
 
-	<p id="status"><font id="heart">&#9829</font><font id="info"> Next refresh in about 240 minutes.</font></p>
+	<p id="status"><font id="heart">&#9829</font><font id="info"> Next refresh in about 360 minutes.</font></p>
 
         <!-- The slideshow itself. Items are appended by clubwall.js -->
         <div id="slideshow">

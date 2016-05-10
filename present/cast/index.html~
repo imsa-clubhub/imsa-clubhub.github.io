@@ -119,7 +119,7 @@
                  */
                 function receiverMessage(namespace, message) {
                         console.log(message);
-                        if (message == "hi") {
+                        /*if (message == "hi") {
                                 $("#heartbeat").css({
                                         color: "lime"
                                 });
@@ -131,7 +131,7 @@
                                                 color: "red"
                                         })
                                 }, 1000);
-                        }
+                        }*/
                 };
                 /**
                  * receiver listener during initialization
