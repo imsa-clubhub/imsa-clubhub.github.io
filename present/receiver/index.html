@@ -78,7 +78,7 @@
                         });
                         console.log('Receiver Manager started');
 
-			var RefreshTime = 14400000;			
+			var RefreshTime = 3600000;			
 			setInterval(function(){
 				RefreshTime = RefreshTime - 300000;
 				$("#info").text(" Next refresh in about "+(RefreshTime/60000)+" minutes.");
@@ -102,7 +102,7 @@
                 <div id="timerstat"></div>
         </div>
 
-	<p id="status"><font id="heart">&#9829</font><font id="info"> Next refresh in about 240 minutes.</font></p>
+	<p id="status"><font id="heart">&#9829</font><font id="info"> Next refresh in about 1 hour.</font></p>
 
         <!-- The slideshow itself. Items are appended by clubwall.js -->
         <div id="slideshow">

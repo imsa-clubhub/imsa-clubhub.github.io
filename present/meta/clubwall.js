@@ -351,7 +351,7 @@ $(document).ready(function() {
 
                 setTimeout(function() {
                         triggerReload();
-                }, 14400000); //Reload rate: 4 hours
+                }, 3600000); //Reload rate: 1 hour
 
         });
 });
