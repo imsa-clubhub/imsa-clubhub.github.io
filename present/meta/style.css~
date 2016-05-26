@@ -14,10 +14,10 @@ html {
     overflow: hidden;
 }
 body {
-    background-size: 20%;
+    background-size: contain;
     background-repeat: repeat;
     background-attachment: scroll;
-    background: white;
+    background: url("/media/background.png");
     font-family: 'Roboto', serif;
     font-weight: 300;
     font-size: 1em;
@@ -165,10 +165,7 @@ h2 {
 }
 
 #titlecard
-{
-	position: absolute;
-	top: 0;
-	left: 0;	
+{	
 	background: #1359c9;
 	color: white;
 }
