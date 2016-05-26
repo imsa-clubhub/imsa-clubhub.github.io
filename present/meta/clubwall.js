@@ -281,11 +281,11 @@ $(document).ready(function() {
 
                         //Generate the slideshow by appending to the main document.
                         if (ToBePosted[index][12].search("fullposter") != -1) {
-                                $("#slideshow").append("<div class=\"step\"><a name=\"step-" + (index + 1) + "\"></a><div class=\"clubcard fullposter\" id=\"card-" + (index + 1) + "\" " + postercode + "></div></div>");
+                                $("#slideshow").append("<div class=\"step\"><a name=\"step-" + (index+1) + "\"></a><div class=\"clubcard fullposter\" id=\"card-" + (index+1) + "\" " + postercode + "></div></div>");
 
                         } else {
                                 //$("#slideshow").append("<div class=\"step\" data-x=\""+Math.round(Math.cos(index+1)*500*(index+1))+"\" data-y=\""+Math.round(Math.cos(index+1)*500*(index+1))+"\" data-z=\""+((index+1)*1500)+"\"><div class=\"clubcard\"><h1 class=\"title\">"+ToBePosted[index][1]+"</h1><h3 class=\"host\">"+ToBePosted[index][0]+"</h3><h3 class=\"logis\">"+namedate.getDayName()+", "+ToBePosted[index][10]+"<br />"+tConvert(ToBePosted[index][7])+"<br />"+ToBePosted[index][9]+"</h3><p class=\"detail\" "+detailexpand+">"+urlify(ToBePosted[index][2])+"</p>"+postercode+"</div></div>");
-                                $("#slideshow").append("<div class=\"step\"><a name=\"step-" + (index + 1) + "\"></a><div class=\"clubcard\" id=\"card-" + (index + 1) + "\"><h1 class=\"title\">" + ToBePosted[index][1] + "</h1><h3 class=\"host\">" + ToBePosted[index][0] + "</h3><h3 class=\"logis\">" + namedate.getDayName() + ", " + ToBePosted[index][10] + "<br />" + tConvert(ToBePosted[index][7]) + "<br />" + ToBePosted[index][9] + "</h3><p class=\"detail\" " + detailexpand + ">" + ToBePosted[index][2] + "</p><div class=\"poster\" " + postercode + "</div></div></div>");
+                                $("#slideshow").append("<div class=\"step\"><a name=\"step-" + (index+1) + "\"></a><div class=\"clubcard\" id=\"card-" + (index+1) + "\"><h1 class=\"title\">" + ToBePosted[index][1] + "</h1><h3 class=\"host\">" + ToBePosted[index][0] + "</h3><h3 class=\"logis\">" + namedate.getDayName() + ", " + ToBePosted[index][10] + "<br />" + tConvert(ToBePosted[index][7]) + "<br />" + ToBePosted[index][9] + "</h3><p class=\"detail\" " + detailexpand + ">" + ToBePosted[index][2] + "</p><div class=\"poster\" " + postercode + "</div></div></div>");
                         }
                 });
                 
@@ -324,8 +324,12 @@ $(document).ready(function() {
 
                         //Uncomment these lines to enable display optimizations.
                         $("#card-" + (counter.mod($(".step").length))).show();
+			if(counter.mod($(".step").length)==0)
+			{
+				animateClip("#titlecard", 0, 8, 1100);
+			}
                         scrollToAnchor("step-" + (counter % $(".step").length));
-                        $("#card-" + ((counter-1).mod($(".step").length))).hide();
+                        setTimeout(function(){$("#card-" + ((counter-1).mod($(".step").length))).hide(); counter++; }, 1000);
 
                         $("#timerstat").css("float", "right").animate({
                                 width: "0%"
@@ -336,13 +340,12 @@ $(document).ready(function() {
                                         advanceSlide();
                                 });
                         });
-
-                        counter++;
                 }
                 
                 
-                //Load first slide.
-                $("#card-0").show();
+                //Flash title card
+		$("#titlecard").show()
+		animateClip("#titlecard", 0, 8, 0);
 
                 //Start slideshow!
                 setTimeout(function() {
@@ -354,4 +357,13 @@ $(document).ready(function() {
                 }, 3600000); //Reload rate: 1 hour
 
         });
+
+	function animateClip(card, start, delta, end)
+	{
+		$(card).css("-webkit-clip-path", "circle("+start+"px at center)");
+		$(card).css("clip-path", "circle("+start+"px at center)");
+		if(start < end){
+			setTimeout(function(){animateClip(card, start+delta, delta, end)}, 1);
+		}
+	}
 });

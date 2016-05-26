@@ -165,7 +165,10 @@ h2 {
 }
 
 #titlecard
-{	
+{
+	position: absolute;
+	top: 0;
+	left: 0;	
 	background: #1359c9;
 	color: white;
 }
