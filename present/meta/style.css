@@ -151,9 +151,14 @@ h2 {
 
 /* TITLE CARD STYLES */
 
+#credits
+{
+	margin-top: 5%;
+}
+
 .logo
 {
-    width: 80%;
+    width: 50%;
 }
 
 #clubhubinfo {

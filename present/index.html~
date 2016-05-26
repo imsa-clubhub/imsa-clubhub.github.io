@@ -20,7 +20,7 @@
         <!-- The slideshow itself. Items are appended by clubwall.js -->
         <div id="slideshow">
                 <!-- The main card shown at the beginning of each presentation cycle. Modify as you like it. -->
-                <div class="step" data-transition-duration="2000">
+                <div class="step" data-transition-duration="5000">
                         <a name="step-0"></a>
                         <div class="clubcard" id="titlecard">
 				<div id="logobox">
