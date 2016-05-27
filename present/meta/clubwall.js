@@ -326,7 +326,7 @@ $(document).ready(function() {
                         $("#card-" + (counter.mod($(".step").length))).show();
 			if(counter.mod($(".step").length)==0)
 			{
-				animateClip("#titlecard", 0, 8, 1100);
+				animateClip("#titlecard", 0, 80, 1100);
 			}
                         scrollToAnchor("step-" + (counter % $(".step").length));
                         setTimeout(function(){$("#card-" + ((counter-1).mod($(".step").length))).hide(); counter++; }, 1000);
@@ -345,7 +345,7 @@ $(document).ready(function() {
                 
                 //Flash title card
 		$("#titlecard").show()
-		animateClip("#titlecard", 0, 8, 0);
+		animateClip("#titlecard", 0, 80, 0);
 
                 //Start slideshow!
                 setTimeout(function() {
@@ -363,7 +363,7 @@ $(document).ready(function() {
 		$(card).css("-webkit-clip-path", "circle("+start+"px at center)");
 		$(card).css("clip-path", "circle("+start+"px at center)");
 		if(start < end){
-			setTimeout(function(){animateClip(card, start+delta, delta, end)}, 1);
+			setTimeout(function(){animateClip(card, start+delta, delta, end)}, 10);
 		}
 	}
 });
